@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Ювелирный магазин</title>
+</head>
+<body>
+    <header class="displFlex">
+        <section class="header-top-cont displFlex container">
+            <nav class="nav-cont displFlex">
+                <a href="" class="header-link white">Контрагентам</a>
+                <a href="" class="header-link white">Дизайнерам</a>
+                <a href="" class="header-link white">Вакансии</a>
+            </nav>
+            <img src="image/logo.png" alt="Logo">
+            <div class="search-cont displFlex white"><img src="image/gridicons_search.png" alt=""> Поиск</div>
+            <div class="lk-cont displFlex white">
+                <a href="" class="header-link white">Вход/Регистрация</a>
+                <button><img src="image/mdi_account.png" alt=""></button>
+                <button><img src="image/topcoat_like.png" alt=""></button>
+            </div>
+        </section>
+        <section class="bottom-cont displFlex">
+            <section class="header-bottom-cont displFlex container">
+                <h1 class="notoSerif white">Долго, дорого, богато!</h1>
+                <a href="" class="link-catalog white">каталог изделий </a>
+            </section>
+            
+            <hr>
+            <div class="all-logo-cont displFlex">
+                <img src="image/Rectangle 2.png" alt="">
+                <img src="image/Rectangle 2.png" alt="">
+                <img src="image/Rectangle 2.png" alt="">
+                <img src="image/Rectangle 2.png" alt="">
+                <img src="image/Rectangle 2.png" alt="">
+                <img src="image/Rectangle 2.png" alt="">
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="catalog-cont container displFlex ">
+            <div class="h-cont displFlex">
+                <h2 class="black">К мероприятиям</h2>
+                <h1 class="black  notoSerif">Настоящая красота здесь!</h1>
+            </div>
+            <div class="nav-catalog displFlex">
+                <button id="btnsvadba" onclick="change(this)" class="link-plitka bg-black">Свадьба</button>
+                <button id="btnmen" onclick="change(this)" class="link-plitka">МУЖУ</button>
+                <button id="btnwumen" onclick="change(this)" class="link-plitka">жене</button>
+                <button id="btncolection" onclick="change(this)" class="link-plitka">коллекции</button>
+            </div>
+            <div id="svadba" class="grid-cont-catalog">
+                <a href="" class="cell white displFlex">Кольца</a>
+                <a href="" class="cell white displFlex">серьги</a>
+                <a href="" class="cell white displFlex">подвески</a>
+                <a href="" class="cell white displFlex">запонки</a>
+                <a href="" class="cell white displFlex">браслеты</a>
+                <a href="" class="cell white displFlex">часы</a>
+            </div>
+
+            <div id="men" class="grid-cont-catalog noActive">
+                <a href="" class="cell white displFlex">Кольца</a>
+                <a href="" class="cell white displFlex">часы</a>
+                <a href="" class="cell white displFlex">запонки</a>
+                <a href="" class="cell white displFlex">цепочки</a>
+                <a href="" class="cell white displFlex">браслеты</a>
+                <a href="" class="cell white displFlex">кулоны</a>
+            </div>
+
+            <div id="wumen" class="grid-cont-catalog noActive">
+                <a href="" class="cell white displFlex">Кольца</a>
+                <a href="" class="cell white displFlex">серьги</a>
+                <a href="" class="cell white displFlex">подвески</a>
+                <a href="" class="cell white displFlex">запонки</a>
+                <a href="" class="cell white displFlex">браслеты</a>
+                <a href="" class="cell white displFlex">часы</a>
+            </div>
+
+            <div id="colection" class="grid-cont-catalog noActive">
+                <a href="" class="cell white displFlex"></a>
+                <a href="" class="cell white displFlex"></a>
+                <a href="" class="cell white displFlex"></a>
+                <a href="" class="cell white displFlex"></a>
+                <a href="" class="cell white displFlex"></a>
+                <a href="" class="cell white displFlex"></a>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            let btnSvadba = document.getElementById('btnsvadba');
+            let btnMen = document.getElementById('btnmen');
+            let btnWumen = document.getElementById('btnwumen');
+            let btnColection = document.getElementById('btncolection');
+            let arrayBtn = [btnSvadba, btnMen, btnWumen, btnColection];
+            
+            let svadba = document.getElementById('svadba');
+            let men = document.getElementById('men');
+            let wumen = document.getElementById('wumen');
+            let colection = document.getElementById('colection');
+            let arrayBox = [svadba, men, wumen, colection];
+
+            console.log(arrayBox);
+
+            function  change(elem){
+                for (let elemBtn of arrayBtn){
+                    elemBtn.classList.remove('bg-black');
+                }
+
+                for (let elemBox of arrayBox){
+                    elemBox.classList.add('noActive');
+                }
+
+                if(elem.id=='btnsvadba'){
+                    svadba.classList.remove('noActive');
+                    elem.classList.add('bg-black');
+                } else if(elem.id=='btnmen'){
+                    men.classList.remove('noActive');
+                    elem.classList.add('bg-black');
+                }else if(elem.id=='btnwumen'){
+                    wumen.classList.remove('noActive');
+                    elem.classList.add('bg-black');
+                } else{
+                    colection.classList.remove('noActive');
+                    elem.classList.add('bg-black');
+                }
+            }
+
+
+        </script>
+
+        <section class="salon-cont">
+            <div class="salon-cont-content displFlex container">
+                <div class="h-cont displFlex">
+                    <h2 class="white-light">Не знаете, что выбрать?</h2>
+                    <h1 class="white notoSerif">Посетите наши салоны в Москве</h1>
+                </div>
+                <p class="grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar. Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim. Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus. Pharetra lorem sem purus nisi libero viverra ipsum.</p>
+                <a href="" class="link-salon black">наши салоны</a>
+            </div>
+        </section>
+        <section class="catalog-cont displFlex">
+            <div class="h-cont displFlex">
+                <h2 class="white-light">Полезные статьи</h2>
+                <h1 class="black notoSerif">Лучшие советы по подбору дорогих подарков</h1>
+            </div>
+            <div class="all-articles-cont container">
+                <a href="" class="cell-article white displFlex">Как выбрать кольцо для своей будущей жены</a>
+                <a href="" class="cell-article white displFlex">Запонки для мужа: 7 ключевых правил покупки аксессуара</a>
+                <a href="" class="cell-article white displFlex">Как выбрать обручальные кольца молодоженам</a>                
+            </div>
+            <a href="" class="link-article displFlex white">читать наш блог</a>
+        </section>
+        <section class="photo-cont displFlex container mt ">
+            <div class="h-cont displFlex ">
+                <h2 class="white-light">#ojjo_jewerly</h2>
+                <h1 class="black notoSerif">Мы в социальных сетях</h1>
+            </div>
+            <div class="photo-cont-content container">
+                <div class="photo ">
+                    <video src="image/video1.mp4" autoplay muted loop width="100%">
+                        Ваш браузер не поддерживает видео
+                    </video>
+                </div>
+                <div class="photo ">
+                    <video src="image/video2.mp4" autoplay muted loop width="100%" >
+                        Ваш браузер не поддерживает видео
+                    </video>
+                </div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+            </div>
+        </section>
+
+        <section class="salon-cont">
+            <div class="salon-cont-content displFlex container">
+                <div class="h-cont displFlex">
+                    <h2 class="white-light">Полезные советы и персональный предложения</h2>
+                    <h1 class="white notoSerif">Эксклюзивная рассылка</h1>
+                </div>
+                <div class="foms-cont displFlex">
+                    <ul>
+                        <li class="white-light">Личный менеджер</li>
+                        <li class="white-light">Доставка и оформление</li>
+                        <li class="white-light">Индивидуальный дизайн</li>
+                    </ul>
+                    <div class="form-block displFlex">
+                        <form action="" method="post" class="displFlex">
+                            <input type="text" class="input black" placeholder="Ваш e-mail">
+                            <input type="submit" class="submit white" value="отправить">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="mt">
+        <section class="content-footer container displFlex">
+            <div class="all-box-footer displFlex">
+                <div class="box-footer displFlex">
+                    <div>
+                        <h3 class="h3-footer">Полезные ссылки</h3>
+                        <hr class="hr-box">
+                    </div>
+                    <ul class="sp-footer displFlex"> 
+                        <li><a href="" class="link-footer">Доставка</a></li>
+                        <li><a href="" class="link-footer">Оплата</a></li>
+                        <li><a href="" class="link-footer">Акции</a></li>
+                        <li><a href="" class="link-footer">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <div class="box-footer displFlex">
+                    <div>
+                        <h3 class="h3-footer">оплата</h3>
+                        <hr class="hr-box">
+                    </div>
+                    <p class="p-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+                    <div class="img-link displFlex">
+                        <a href=""><img src="image/visa.png" alt=""></a>
+                        <a href=""><img src="image/mastercard.png" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="box-footer displFlex">
+                    <div>
+                        <h3 class="h3-footer">контакты</h3>
+                        <hr class="hr-box">
+                    </div>
+                    <ul class="sp-footer displFlex">
+                        <li class="li-flex displFlex"><a href="" class="link-footer"><img src="image/entypo_old-phone.png" alt=""> 8 (812) 234-56-55</a></li>
+                        <li class="li-flex displFlex"><a href="" class="link-footer"><img src="image/entypo_old-phone.png" alt=""> 8 (812) 234-56-55</a></li>
+                        <li class="li-flex displFlex"><a href="" class="link-footer"><img src="image/entypo_mail.png" alt=""> ojjo@ojjo.ru</a></li>
+                    </ul>
+                </div>
+
+                <div class="box-footer displFlex">
+                    <div>
+                        <h3 class="h3-footer">социальные сети</h3>
+                        <hr class="hr-box">
+                    </div>
+                    <p class="p-footer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+                    <div class="icon-cont displFlex">
+                        <a href=""><img src="image/carbon_logo-youtube.png" alt=""></a>
+                        <a href=""><img src="image/entypo-social_vk.png" alt=""></a>
+                        <a href=""><img src="image/bx_bxl-facebook.png" alt=""></a>
+                        <a href=""><img src="image/bx_bxl-telegram.png" alt=""></a>
+                        <a href=""><img src="image/simple-icons_etsy.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr-fb">
+            <div class="bottom-cont-footer displFlex">
+                <a href="" class="black">(c) 2020 OJJO jewelry</a>
+                <a href="" class="black">Договор публичной офферты</a>
+                <a href="" class="black">Контрагентам</a>
+                <a href="" class="black">Сделано Figma.info</a>
+            </div>
+        </section>
+    </footer>
+    
+</body>
+</html>
